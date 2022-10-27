@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="app.js" >
+
+    </script>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+       <link rel="stylesheet" href="font-awesome.css"> 
+      <link rel="stylesheet" href="main.css">
+      </head>
+      <body>
+        
+          
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="app.js"></script>      
+      </body>
+    </html>
+</head>
+<body>
+    <style>
+      *{
+    background-image: url(yorumcuast.jpg) !important;
+
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+   transition: all .2s linear;
+
+}
+h1{
+text-align: center;
+color: #ccc;
+font-family: Arial, Helvetica, sans-serif;
+margin-top: 50px;
+display: flex;
+justify-content: center;
+
+
+}
+
+
+
+   
+
+
+.form-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    perspective: 1000px;
+}
+.form-container form{
+height: 450px;
+width: 350px;
+background: rgba(255 ,255, 255, 1);
+text-align: center;
+border-radius: 5px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+border-top: 1px solid rgba(255 ,255, 255, .3);
+border-left: 1px solid rgba(255 ,255, 255, .3);
+backdrop-filter: blur(10px);
+transform-style: preserve-3d;
+}
+.form-container form h3{
+font-size: 30px;
+padding: 30px 0;
+color: #ccc;
+letter-spacing: 3px;
+}
+.form-container form i{
+padding: 0 5px;
+font-size: 20px;
+color: #bbb;
+}
+.form-container form input{
+outline: none;
+border:none;
+height: 40px;
+width: 82%;
+background: rgba(0,0,0,0.1);
+color: rgba(255,255,255,.7);
+box-shadow: 0 0 5px rgba(0,0, 0, 0.3) inset;
+font-size: 17px;
+padding: 0 10px;
+margin: 15px 0;
+letter-spacing: 1px;
+}
+.form-container form button[type="submit"]{
+width: 90%;
+cursor: pointer;
+background: linear-gradient(90deg,deeppink,blueviolet);
+margin-top: 30px;
+border-radius: 50px;
+color:white;
+
+}
+.form-container form button[type="submit"]:hover{
+letter-spacing: 4px;
+}
+
+#ata{
+
+color: #fff;
+background-image:none !important;
+padding: 30px;
+}
+
+    </style>
+    
+   <div class="form-container">
+    <div id="ata">  <h2 >
+      SİTE ADI
+    </h2></div>
+  
+    <form action="app.js" method="post" id="form" onsubmit="validateForm(); return false;">  <!-- kullanıcı adı:atakan şifre: 697845 glassmorphism sayfa yenilenmeyecek girişe basınca alert verecek-->
+      <h3>Giriş yap</h3>
+      <i class="fas fa-user"></i>
+      <input type="text" placeholder="Kullanıcı adı" value="atakan" id="username" name="username">
+      <i class="fas fa-it"></i>
+      <input type="password" placeholder="Şifre" value="697845" id="password" name="">
+      <i class="fas fa-lock"></i>
+      <br>
+      <button id="giris" type="submit" onclick="check(username, password )">Giriş yap</button>
+
+
+    </form>
+    <script>
+      
+var form=document.getElementById('form');
+
+form.addEventListener('mousemove', (e) =>{
+
+  var x=(window.innerWidth / 2 - e.pageX) /12;
+  var y=(window.innerHeight / 2 - e.pageY) /12;
+
+  form.style.transform= 'rotateX(' + x + 'deg) rotateY(' + y + 'deg)';
+
+});
+
+
+form.addEventListener('mouseleave', function(){
+  form.style.transform='rotateX(0deg) rotateY(0deg)'
+
+  
+});
+
+alert('kullanıcı adı ve şifre alanını boş bırakmayın!- kullanıcı adı ve şifre alanında sembol ve boşluk kullanmayın!')
+
+
+
+function validateForm() {
+    
+    let userNameValue =document.getElementById('username').value
+    let passwordValue=document.getElementById('password').value
+
+   if(userNameValue=="atakan" && passwordValue=='697845'){
+   alert('giriş başarılı');
+  }
+  else if(userNameValue !== "atakan" && passwordValue == '697845'){
+   alert('kullanıcı adı hatalı');}
+   else if(userNameValue == "atakan" && passwordValue !== '697845'){
+   alert('şifre hatalı');}
+   else
+   alert('giriş başarısız');
+   
+   return false;
+
+   }
+   
+
+
+    </script>
+
+ 
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+   
+
+
+</body>
+</html>
